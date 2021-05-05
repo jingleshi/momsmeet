@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Moms Meet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Moms  Meet</h1>
+    <p>Playdate .  Gathering . and more</p>
+  </div>
+
+  <div class="navbar">
+    <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="#">Events</a>
+    <a href="#">About Us</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+  </div>
+  
+  <div class="row">
+    <div class="side">
+      
+      <div id="myBtnContainer">
+        <!-- <button class="btn-head"> Filter </button><br> -->
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button><br>
+        <button class="btn" onclick="filterSelection('cars')"> Event Name</button><br>
+        <button class="btn" onclick="filterSelection('animals')"> Event Date</button><br>
+        <button class="dropdown-btn">Event Type
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-container">
+          <a href="#">Public Event</a>
+          <a href="#">Private Event</a>
+        </div>
+        <button class="btn" onclick="filterSelection('colors')"> Keyword</button><br>
+        <button class="btn" onclick="filterSelection('fruits')"> Zipcode</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <button type="button" class="collapsible">Event 1</button>
+      <div class="content">
+        <h3>Private Event</h3>
+        <p>Matt's Birthday Party | May 4th | 78704 | <a href='#'>Login to send a request</a></p>
+      </div>
+      <button type="button" class="collapsible">Event 2</button>
+      <div class="content">
+        <h3>Public Event</h3>
+        <h2>Memorial Day Playdate at Park</h2>
+        <h3>Location: Downtow Park</h3>
+        <h3>Time: May 31th, 1pm</h3>
+        <h3>Age group: Ang age</h3>
+        <p>We will have a little kids party at the park on Memorial day,
+          there will be petting zoo, music, food and drinks, come and make some friends!
+        </p>
+      </div>
+      <button type="button" class="collapsible">Event 3</button>
+      <div class="content">
+        <h3>Private Event</h3>
+        <p>Wednesday Playdate | May 14th | 78714 | <a href='#'>Login to send a request</a></p>
+      </div>
+      <button type="button" class="collapsible">Event 4</button>
+      <div class="content">
+        <h3>Public Event</h3>
+        <h2>Sunday Storytime at Austin Library</h2>
+        <h3>Location: Austin Library</h3>
+        <h3>Time: May 9th, 10am</h3>
+        <h3>Age group: under 6</h3>
+        <p>We will have storytime and music time every sunday at Austin Library, 
+          enjoy a fun sunday morning with your little ones.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>About us | Privacy Policy</p>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+    }
+    
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  
+    </script> 
+</body>
+</html>
